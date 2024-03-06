@@ -6,7 +6,7 @@ const profileRoutes = require("./routes/Profile");
 const paymentRoutes = require("./routes/Payments");
 const courseRoutes = require("./routes/Course");
 const contactUsRoute = require("./routes/Contact");
-const database = require("./config/database");
+const connectDB= require("./config/database");
 const cookieParser = require("cookie-parser");
 const cors = require("cors");
 const {cloudinaryConnect } = require("./config/cloudinary");
@@ -17,7 +17,7 @@ dotenv.config();
 const PORT = process.env.PORT || 4000;
 
 //database connect
-database.connect();
+connectDB();
 //middlewares
 app.use(express.json());
 app.use(cookieParser());
