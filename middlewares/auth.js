@@ -9,7 +9,7 @@ exports.auth = async (req, res, next) => {
         //extract token
         const token = req.cookies.token 
                         || req.body.token 
-                        || req.header("Authorisation").replace("Bearer ", "");
+                        || req.header("Authorization").replace("Bearer ", "");
         console.log("AFTER ToKEN EXTRACTION");
 
         //if token missing, then return response
@@ -42,7 +42,6 @@ exports.auth = async (req, res, next) => {
         });
     }
 }
-
 // isStudent
 
 exports.isStudent = async (req, res, next) => {
