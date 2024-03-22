@@ -19,11 +19,14 @@ exports.updateProfile = async (req, res) => {
 
 		// Save the updated profile
 		await profile.save();
+	await	userDetails.populate(
+		"additionalDetails")
 
 		return res.json({
 			success: true,
 			message: "Profile updated successfully",
 			profile,
+			userDetails
 		});
 	} catch (error) {
 		console.log(error);
