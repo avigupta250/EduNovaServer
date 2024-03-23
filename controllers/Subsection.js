@@ -123,7 +123,7 @@ exports.createSubSection = async (req, res) => {
   
         // find updated section and return it
     const updatedSection = await Section.findById(sectionId).populate(
-      "subSection"
+      "SubSection"
     )
 
     return res.json({
