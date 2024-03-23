@@ -17,6 +17,10 @@
     "url": "https://github.com/avigupta250/EduNovaServer/issues"
   },
   "homepage": "https://github.com/avigupta250/EduNovaServer#readme",
+  "devDependencies": {
+        
+    "@babel/plugin-proposal-private-property-in-object": "^7.18.0"
+  },
   "dependencies": {
     "bcrypt": "^5.1.1",
     "bcryptjs": "^2.4.3",
