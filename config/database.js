@@ -3,7 +3,7 @@ require("dotenv").config();
 
 const connectDB = () => {
   mongoose
-    .connect("mongodb+srv://avivanced250:facts24@cluster0.x5w9m2h.mongodb.net/EduNovaDB")
+    .connect(process.env.MONGODB_URL)
     .then(() => {
       console.log("DB Connection Established Successfully");
     })
