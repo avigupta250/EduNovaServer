@@ -24,21 +24,13 @@ app.use(cookieParser());
 
 
 const corsOptions = {
-	origin:"https://edunova-frontend.vercel.app",
-	// origin:'http://localhost:3000/',
-	credentials: true 
+	origin: "https://edunova-frontend.vercel.app", 
+	credentials: true,
   };
   
   app.use(cors(corsOptions));
   app.options('*', cors(corsOptions));
-  app.use((req, res, next) => {
-	res.setHeader('Access-Control-Allow-Origin', 'https://edunova-frontend.vercel.app/');
-	res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS');
-	res.setHeader('Access-Control-Allow-Headers', 'Content-Type, Authorization');
-	res.setHeader('Access-Control-Allow-Credentials', 'true');
-	next();
-  })
-
+  
 app.use(
 	fileUpload({
 		useTempFiles:true,
