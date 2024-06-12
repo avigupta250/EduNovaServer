@@ -6,7 +6,7 @@ const coursesSchema = new mongoose.Schema({
 	instructor: {
 		type: mongoose.Schema.Types.ObjectId,
 		required: true,
-		ref: "user",
+		ref: "User",
 	},
 	whatYouWillLearn: {
 		type: String,
@@ -52,6 +52,7 @@ const coursesSchema = new mongoose.Schema({
 		type: String,
 		enum: ["Draft", "Published"],
 	},
+	createdAt: { type: Date, default: Date.now },
 });
 
 
